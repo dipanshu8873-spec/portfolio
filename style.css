@@ -1,41 +1,49 @@
-/* ===== Google Font ===== */
+/* =========================
+   GOOGLE FONT & RESET
+========================= */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
 *{
     margin:0;
     padding:0;
     box-sizing:border-box;
-    scroll-behavior:smooth;
     font-family:'Poppins',sans-serif;
+    scroll-behavior:smooth;
 }
 
 body{
     background:#0b1120;
-    color:#ffffff;
+    color:#fff;
+    overflow-x:hidden;
 }
 
-/* ===== Navbar ===== */
+/* =========================
+   NAVBAR
+========================= */
 
 header{
-    width:100%;
     position:fixed;
     top:0;
-    left:0;
-    background:rgba(11,17,32,.95);
-    backdrop-filter:blur(10px);
+    width:100%;
     z-index:1000;
+    background:rgba(10,15,30,.75);
+    backdrop-filter:blur(12px);
 }
 
 .navbar{
     max-width:1200px;
     margin:auto;
+    padding:18px 25px;
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:18px 25px;
 }
 
 .logo{
-    font-size:30px;
+    font-size:32px;
     font-weight:700;
+    color:#fff;
 }
 
 .logo span{
@@ -45,13 +53,14 @@ header{
 .nav-links{
     display:flex;
     list-style:none;
-    gap:28px;
+    gap:30px;
 }
 
 .nav-links a{
-    color:white;
+    color:#fff;
     text-decoration:none;
     transition:.3s;
+    font-weight:500;
 }
 
 .nav-links a:hover{
@@ -63,7 +72,9 @@ header{
     cursor:pointer;
 }
 
-/* ===== Hero ===== */
+/* =========================
+   HERO
+========================= */
 
 .hero{
     max-width:1200px;
@@ -72,8 +83,8 @@ header{
     display:flex;
     justify-content:space-between;
     align-items:center;
-    padding:120px 30px 50px;
     gap:60px;
+    padding:130px 25px 60px;
 }
 
 .hero-text{
@@ -82,35 +93,38 @@ header{
 
 .hero-text h4{
     color:#3b82f6;
+    font-size:22px;
     margin-bottom:10px;
 }
 
 .hero-text h1{
-    font-size:60px;
-    margin-bottom:10px;
+    font-size:62px;
+    line-height:1.2;
+    margin-bottom:15px;
 }
 
 .hero-text h2{
-    font-size:30px;
     color:#cbd5e1;
+    font-size:28px;
     margin-bottom:20px;
 }
 
 .hero-text p{
-    line-height:1.8;
     color:#94a3b8;
-    margin-bottom:30px;
+    line-height:1.8;
+    margin-bottom:35px;
+    max-width:600px;
 }
 
 .hero-buttons{
     display:flex;
-    gap:15px;
+    gap:18px;
 }
 
 .btn,
 .btn2{
-    padding:14px 28px;
-    border-radius:8px;
+    padding:14px 30px;
+    border-radius:10px;
     text-decoration:none;
     font-weight:600;
     transition:.3s;
@@ -118,7 +132,7 @@ header{
 
 .btn{
     background:#3b82f6;
-    color:white;
+    color:#fff;
 }
 
 .btn:hover{
@@ -127,12 +141,16 @@ header{
 
 .btn2{
     border:2px solid #3b82f6;
-    color:white;
+    color:#fff;
 }
 
 .btn2:hover{
     background:#3b82f6;
 }
+
+/* =========================
+   HERO IMAGE
+========================= */
 
 .hero-image{
     flex:1;
@@ -146,26 +164,48 @@ header{
     border-radius:50%;
     object-fit:cover;
     border:6px solid #3b82f6;
-    box-shadow:0 0 40px rgba(59,130,246,.4);
+    box-shadow:0 0 40px rgba(59,130,246,.45);
+    animation:floatImage 4s ease-in-out infinite;
 }
 
-/* ================= SECTION TITLE ================= */
+@keyframes floatImage{
+
+0%{
+transform:translateY(0);
+}
+
+50%{
+transform:translateY(-15px);
+}
+
+100%{
+transform:translateY(0);
+}
+
+}
+
+/* =========================
+   COMMON
+========================= */
 
 .section-title{
     text-align:center;
-    font-size:40px;
+    font-size:42px;
     margin-bottom:50px;
     color:#3b82f6;
 }
 
-/* ================= ABOUT ================= */
+/* =========================
+   ABOUT
+========================= */
 
 .about{
     max-width:1100px;
     margin:100px auto;
-    padding:40px;
+    padding:45px;
     background:#111827;
-    border-radius:15px;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.08);
 }
 
 .about p{
@@ -174,12 +214,14 @@ header{
     color:#cbd5e1;
 }
 
-/* ================= SKILLS ================= */
+/* =========================
+   SKILLS
+========================= */
 
 .skills{
     max-width:1200px;
-    margin:auto;
-    padding:80px 20px;
+    margin:100px auto;
+    padding:20px;
 }
 
 .skill-container{
@@ -190,47 +232,48 @@ header{
 
 .skill-card{
     background:#111827;
-    border-radius:15px;
+    border-radius:18px;
     padding:30px;
     text-align:center;
-    transition:.4s;
-    cursor:pointer;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.35s;
 }
 
 .skill-card:hover{
     transform:translateY(-10px);
-    box-shadow:0 0 20px rgba(59,130,246,.4);
+    box-shadow:0 0 25px rgba(59,130,246,.35);
 }
 
 .skill-card i{
-    font-size:50px;
+    font-size:48px;
     color:#3b82f6;
     margin-bottom:15px;
 }
 
 .skill-card h3{
-    color:white;
+    color:#fff;
 }
 
-/* ================= EDUCATION ================= */
+/* =========================
+   EDUCATION
+========================= */
 
 .education{
-    max-width:1000px;
-    margin:80px auto;
+    max-width:1100px;
+    margin:100px auto;
     padding:20px;
 }
 
 .edu-box{
     background:#111827;
-    margin-bottom:25px;
     padding:30px;
+    margin-bottom:25px;
     border-left:5px solid #3b82f6;
-    border-radius:10px;
+    border-radius:15px;
 }
 
 .edu-box h3{
     margin-bottom:10px;
-    color:white;
 }
 
 .edu-box p{
@@ -239,126 +282,97 @@ header{
 
 .edu-box span{
     display:inline-block;
-    margin-top:12px;
+    margin-top:10px;
     color:#3b82f6;
-    font-weight:bold;
+    font-weight:600;
 }
 
-/* Navbar CSS */
-
-/* Hero CSS */
-
-.hero-image img{
-    width:380px;
-    height:380px;
-    border-radius:50%;
-    object-fit:cover;
-    border:6px solid #3b82f6;
-    box-shadow:0 0 40px rgba(59,130,246,.4);
-}
-
-/* 👇 Iske niche paste karna hai */
-
-/* ================= SECTION TITLE ================= */
-
-.section-title{
-    text-align:center;
-    font-size:40px;
-    margin-bottom:50px;
-    color:#3b82f6;
-}
-
-/* About CSS */
-/* Skills CSS */
-/* Education CSS */
-
-/* ================= CERTIFICATES ================= */
+/* =========================
+   CERTIFICATES & PROJECTS
+========================= */
 
 .certificates,
 .projects,
 .contact{
     max-width:1200px;
-    margin:80px auto;
+    margin:100px auto;
     padding:20px;
 }
 
 .certificate-container,
 .project-container{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:25px;
+    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+    gap:30px;
 }
 
 .certificate-card,
 .project-card{
     background:#111827;
-    padding:25px;
-    border-radius:15px;
-    transition:.3s;
-    border:1px solid #1e293b;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:30px;
+    transition:.35s;
 }
 
 .certificate-card:hover,
 .project-card:hover{
-    transform:translateY(-8px);
-    box-shadow:0 0 20px rgba(59,130,246,.35);
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(59,130,246,.35);
 }
 
 .certificate-card h3,
 .project-card h3{
     color:#3b82f6;
-    margin-bottom:10px;
+    margin-bottom:12px;
 }
 
-.project-card p,
-.certificate-card p{
+.certificate-card p,
+.project-card p{
     color:#cbd5e1;
-    line-height:1.7;
+    line-height:1.8;
+    margin-bottom:20px;
 }
 
+.certificate-card .btn,
 .project-card a{
     display:inline-block;
-    margin-top:15px;
-    color:#3b82f6;
-    text-decoration:none;
-    font-weight:600;
-}
-.certificate-card .btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:12px 24px;
+    padding:12px 22px;
+    border-radius:8px;
     background:#3b82f6;
     color:#fff;
     text-decoration:none;
-    border-radius:8px;
     font-weight:600;
-    transition:0.3s;
+    transition:.3s;
 }
 
-.certificate-card .btn:hover{
+.certificate-card .btn:hover,
+.project-card a:hover{
     background:#2563eb;
-    transform:scale(1.05);
 }
 
-/* ================= CONTACT ================= */
+/* =========================
+   CONTACT
+========================= */
 
 .contact-box{
+    max-width:750px;
+    margin:auto;
     background:#111827;
     padding:35px;
-    border-radius:15px;
-    max-width:700px;
-    margin:auto;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.08);
 }
 
 .contact-box p{
     margin:18px 0;
-    color:#cbd5e1;
     font-size:18px;
+    color:#cbd5e1;
 }
 
 .contact-box i{
     color:#3b82f6;
-    margin-right:10px;
+    width:30px;
 }
 
 .contact-box a{
@@ -366,200 +380,69 @@ header{
     text-decoration:none;
 }
 
-/* ================= FOOTER ================= */
-
 footer{
+    margin-top:80px;
+    padding:25px;
     background:#111827;
     text-align:center;
-    padding:25px;
-    margin-top:60px;
     color:#94a3b8;
 }
 
-/* ================= RESPONSIVE ================= */
+/* =========================
+   PROJECTS
+========================= */
 
-@media(max-width:768px){
-
-.hero{
-    flex-direction:column;
-    text-align:center;
+.project-card{
+    background:#111827;
+    border:1px solid rgba(255,255,255,.08);
+    border-radius:18px;
+    padding:30px;
+    transition:.35s;
 }
 
-.hero-text h1{
-    font-size:42px;
+.project-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 0 25px rgba(59,130,246,.35);
 }
 
-.hero-text h2{
-    font-size:22px;
-}
-
-.hero-image img{
-    width:260px;
-    height:260px;
-}
-
-.navbar{
-    flex-direction:column;
-    gap:15px;
-}
-
-.nav-links{
-    flex-wrap:wrap;
-    justify-content:center;
-}
-
-}
-/* ===== Light Mode ===== */
-
-body.light-mode{
-    background:#f5f5f5;
-    color:#111;
-}
-
-body.light-mode header,
-body.light-mode .about,
-body.light-mode .skill-card,
-body.light-mode .edu-box,
-body.light-mode .certificate-card,
-body.light-mode .project-card,
-body.light-mode .contact-box,
-body.light-mode footer{
-    background:white;
-    color:#111;
-}
-
-body.light-mode p,
-body.light-mode h3,
-body.light-mode a{
-    color:#111;
-}
-
-/* ===== Typing Effect ===== */
-
-#typing{
+.project-card h3{
     color:#3b82f6;
-    font-weight:700;
-    border-right:3px solid #3b82f6;
-    padding-right:5px;
-    animation:blink .8s infinite;
+    margin-bottom:15px;
 }
 
-@keyframes blink{
-
-50%{
-border-color:transparent;
+.project-card p{
+    color:#cbd5e1;
+    line-height:1.8;
+    margin-bottom:20px;
 }
 
+/* ===== Tech Stack ===== */
+
+.tech-stack{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-bottom:20px;
 }
 
-/* ================= SCROLL ANIMATION ================= */
-
-.hidden{
-
-opacity:0;
-transform:translateY(80px);
-transition:all .8s ease;
-
-}
-
-.show{
-
-opacity:1;
-transform:translateY(0);
-
-}
-
-/* ================= GLASS EFFECT ================= */
-
-.about,
-.skill-card,
-.edu-box,
-.certificate-card,
-.project-card,
-.contact-box{
-
-background:rgba(255,255,255,.05);
-
-backdrop-filter:blur(12px);
-
-border:1px solid rgba(255,255,255,.12);
-
-box-shadow:0 8px 25px rgba(0,0,0,.25);
-
-}
-
-/* ================= HOVER ================= */
-
-.skill-card:hover,
-.project-card:hover,
-.certificate-card:hover{
-
-transform:translateY(-12px) scale(1.03);
-
-transition:.4s;
-
-}
-
-
-/* ===== Hero Image Animation ===== */
-
-.hero-image img{
-    animation: floatImage 4s ease-in-out infinite;
-}
-
-@keyframes floatImage{
-    0%{
-        transform:translateY(0);
-    }
-
-    50%{
-        transform:translateY(-15px);
-    }
-
-    100%{
-        transform:translateY(0);
-    }
-}
-
-/* Hero Name Gradient */
-
-.hero-text h1{
-    background:linear-gradient(90deg,#ffffff,#3b82f6);
-    background-clip:text;
-    -webkit-background-clip:text;
-    color:transparent;
-    -webkit-text-fill-color:transparent;
-}
-
-/* ===== Progress Bars ===== */
-
-.progress{
-    width:100%;
-    height:10px;
+.tech-stack span{
     background:#1e293b;
+    color:#3b82f6;
+    padding:6px 12px;
     border-radius:20px;
-    margin-top:15px;
-    overflow:hidden;
+    font-size:14px;
+    font-weight:600;
 }
 
-.progress-bar{
-    height:100%;
-    color:white;
-    text-align:right;
-    padding-right:8px;
-    font-size:10px;
-    line-height:10px;
-    border-radius:20px;
-    background:linear-gradient(90deg,#3b82f6,#06b6d4);
+/* ===== Buttons ===== */
+
+.project-buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
 }
 
-.cpp{width:85%;}
-.python{width:80%;}
-.html{width:90%;}
-.css{width:85%;}
-.javascript{width:75%;}
-.mysql{width:80%;}
-.git{width:75%;}
-.linux{width:70%;}
-.cyber{width:80%;}
-.network{width:75%;}
+.project-buttons .btn,
+.project-buttons .btn2{
+    padding:10px 22px;
+}
