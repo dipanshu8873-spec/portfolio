@@ -706,3 +706,12 @@ body.light-mode .tech-stack span {
     background: #e0f2fe;
     color: #0369a1;
 }
+
+body.light-mode .btn2 {
+    color: #0f172a;
+    border-color: #3b82f6;
+}
+
+body.light-mode .btn2:hover {
+    color: #ffffff;
+}
