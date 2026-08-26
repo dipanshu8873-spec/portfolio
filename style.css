@@ -571,3 +571,83 @@ footer{
 }
 
 }
+
+/* =========================
+   CYBER SECURITY PROJECTS BACKGROUND
+========================= */
+
+.projects {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        radial-gradient(circle at 10% 20%,
+            rgba(0, 255, 255, .12),
+            transparent 25%),
+
+        radial-gradient(circle at 90% 80%,
+            rgba(0, 255, 180, .12),
+            transparent 25%),
+
+        linear-gradient(135deg,
+            #020617,
+            #061a3a 50%,
+            #020617);
+
+    border-radius: 20px;
+}
+
+.projects::before {
+    content: "";
+    position: absolute;
+    width: 450px;
+    height: 450px;
+    top: -220px;
+    right: -180px;
+
+    background: radial-gradient(circle,
+            rgba(0, 200, 255, .18),
+            transparent 70%);
+
+    pointer-events: none;
+}
+
+.projects .section-title,
+.projects .project-container {
+    position: relative;
+    z-index: 2;
+}
+
+.projects .project-card {
+    background: rgba(2, 12, 35, .78);
+
+    border: 1px solid rgba(0, 255, 255, .45);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 0 15px rgba(0, 200, 255, .08),
+        inset 0 0 20px rgba(0, 200, 255, .03);
+
+    transition: .4s;
+}
+
+.projects .project-card:hover {
+    transform: translateY(-12px);
+
+    border-color: #00ffff;
+
+    box-shadow:
+        0 0 25px rgba(0, 255, 255, .25),
+        0 0 50px rgba(0, 200, 255, .10);
+}
+
+.projects .project-card h3 {
+    color: #38bdf8;
+}
+
+.projects .tech-stack span {
+    background: rgba(0, 200, 255, .08);
+    border: 1px solid rgba(0, 200, 255, .30);
+    color: #67e8f9;
+}
