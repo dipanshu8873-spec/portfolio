@@ -19,17 +19,19 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
 
 const themeBtn = document.querySelector(".theme-btn");
 
-themeBtn.addEventListener("click", () => {
+if (themeBtn) {
+    themeBtn.addEventListener("click", () => {
 
-    document.body.classList.toggle("light-mode");
+        document.body.classList.toggle("light-mode");
 
-    if (document.body.classList.contains("light-mode")) {
-        themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
-    } else {
-        themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
-    }
+        if (document.body.classList.contains("light-mode")) {
+            themeBtn.innerHTML = '<i class="fa-solid fa-sun"></i>';
+        } else {
+            themeBtn.innerHTML = '<i class="fa-solid fa-moon"></i>';
+        }
 
-});
+    });
+}
 
 /* ================= Typing Animation ================= */
 

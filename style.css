@@ -632,3 +632,77 @@ footer{
     border: 1px solid rgba(103, 232, 249, 0.28);
     color: #a5f3fc;
 }
+
+/* =========================
+   LIGHT MODE
+========================= */
+
+body.light-mode {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+body.light-mode header {
+    background: rgba(255, 255, 255, 0.85);
+}
+
+body.light-mode .logo,
+body.light-mode .nav-links a,
+body.light-mode .skill-card h3,
+body.light-mode .profile-card h3 {
+    color: #0f172a;
+}
+
+body.light-mode .hero-text h2,
+body.light-mode .hero-text p,
+body.light-mode .about p,
+body.light-mode .edu-box p,
+body.light-mode .certificate-card p,
+body.light-mode .project-card p,
+body.light-mode .profile-card p,
+body.light-mode .contact-info p {
+    color: #475569;
+}
+
+body.light-mode .about,
+body.light-mode .skill-card,
+body.light-mode .edu-box,
+body.light-mode .certificate-card,
+body.light-mode .profile-card,
+body.light-mode .contact-info,
+body.light-mode .contact-form {
+    background: #ffffff;
+    border-color: #cbd5e1;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+body.light-mode .contact-form input,
+body.light-mode .contact-form textarea {
+    background: #e2e8f0;
+    color: #0f172a;
+}
+
+body.light-mode footer {
+    background: #e2e8f0;
+    color: #475569;
+}
+
+body.light-mode .projects {
+    background:
+        radial-gradient(circle at 12% 18%, rgba(34, 211, 238, 0.20), transparent 22%),
+        linear-gradient(135deg, #e0f2fe 0%, #f8fafc 55%, #cffafe 100%);
+}
+
+body.light-mode .projects .project-card {
+    background: rgba(255, 255, 255, 0.78);
+    border-color: rgba(8, 145, 178, 0.35);
+}
+
+body.light-mode .projects .project-card p {
+    color: #334155;
+}
+
+body.light-mode .tech-stack span {
+    background: #e0f2fe;
+    color: #0369a1;
+}
