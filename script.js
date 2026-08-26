@@ -102,3 +102,38 @@ el.classList.add("hidden");
 observer.observe(el);
 
 });
+
+// =============================
+// EmailJS Contact Form
+// =============================
+
+(function () {
+    emailjs.init({
+        publicKey: "YOUR_PUBLIC_KEY"
+    });
+})();
+
+const contactForm = document.getElementById("contactForm");
+
+if (contactForm) {
+    contactForm.addEventListener("submit", function (e) {
+        e.preventDefault();
+
+        const submitBtn = contactForm.querySelector("button[type='submit']");
+        const originalText = submitBtn.textContent;
+        submitBtn.textContent = "Sending...";
+
+        emailjs.sendForm("YOUR_SERVICE_ID", "YOUR_TEMPLATE_ID", contactForm)
+            .then(() => {
+                alert("Message sent successfully!");
+                contactForm.reset();
+            })
+            .catch((error) => {
+                alert("Failed to send message. Please try again.");
+                console.error("EmailJS Error:", error);
+            })
+            .finally(() => {
+                submitBtn.textContent = originalText;
+            });
+    });
+}
