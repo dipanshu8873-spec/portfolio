@@ -55,34 +55,34 @@ body{
     letter-spacing: 2px;
 }
 
-.intro-hello {
-    animation: introFadeInOut 3.2s ease-in-out 0s 1 forwards;
+.intro-namaste {
+    animation: introFadeInOut 1.2s ease-in-out 0s 1 forwards;
 }
 
-.intro-namaste {
-    animation: introFadeInOut 3.2s ease-in-out 0.8s 1 forwards;
+.intro-hello {
+    animation: introFadeInOut 1.2s ease-in-out 1.2s 1 forwards;
 }
 
 .intro-welcome {
-    animation: introFadeInOut 3.2s ease-in-out 1.6s 1 forwards;
+    animation: introFadeInOut 1.2s ease-in-out 2.4s 1 forwards;
 }
 
 @keyframes introFadeInOut {
     0% {
         opacity: 0;
-        transform: translate(-50%, -50%) scale(0.7);
+        transform: translate(-50%, -50%) translateY(12px) scale(0.96);
     }
-    15% {
+    20% {
         opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) translateY(0) scale(1);
     }
-    85% {
+    80% {
         opacity: 1;
-        transform: translate(-50%, -50%) scale(1);
+        transform: translate(-50%, -50%) translateY(0) scale(1);
     }
     100% {
         opacity: 0;
-        transform: translate(-50%, -50%) scale(0.7);
+        transform: translate(-50%, -50%) translateY(-12px) scale(0.96);
     }
 }
 
@@ -305,12 +305,12 @@ transform:translateY(0);
     border:1px solid rgba(59,130,246,.2);
 }
 
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 40px;
-    align-items: center;
-}
+    .about-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        align-items: center;
+    }
 
 .about-text {
     flex: 1;
@@ -323,11 +323,11 @@ transform:translateY(0);
     margin-bottom: 20px;
 }
 
-.about-highlights {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-}
+    .about-highlights {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
 
 .highlight-card {
     background: rgba(59, 130, 246, 0.08);
@@ -583,7 +583,7 @@ transform:translateY(0);
     padding: 45px;
     box-shadow: 0 0 35px rgba(59, 130, 246, 0.15), inset 0 0 20px rgba(59, 130, 246, 0.06);
     border: 1px solid rgba(59, 130, 246, 0.3);
-    min-height: 550px;
+    min-height: 640px;
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
 }
@@ -595,7 +595,7 @@ transform:translateY(0);
 
 .cert-slide {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 0.55fr 0.45fr;
     gap: 50px;
     align-items: center;
     width: 100%;
@@ -616,11 +616,11 @@ transform:translateY(0);
 
 /* Certificate Preview (Left Side) */
 
-.cert-preview {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 460px;
+    .cert-preview {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 520px;
     background: rgba(10, 15, 30, 0.7);
     border-radius: 16px;
     border: 1px solid rgba(59, 130, 246, 0.25);
@@ -629,7 +629,7 @@ transform:translateY(0);
     overflow: hidden;
 }
 
-.cert-preview object {
+.cert-preview img {
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -841,12 +841,12 @@ transform:translateY(0);
     }
 
     .cert-slide {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 0.55fr 0.45fr;
         gap: 30px;
     }
 
     .cert-preview {
-        height: 400px;
+        height: 480px;
     }
 
     .cert-title {
@@ -881,12 +881,12 @@ transform:translateY(0);
     }
 
     .cert-slide {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 0.55fr 0.45fr;
         gap: 25px;
     }
 
     .cert-preview {
-        height: 350px;
+        height: 420px;
     }
 }
 
@@ -1430,9 +1430,9 @@ footer{
         grid-template-columns: 1fr;
     }
 
-    .about-highlights {
-        grid-template-columns: 1fr 1fr;
-    }
+        .about-highlights {
+            grid-template-columns: 1fr 1fr;
+        }
 }
 
 @media(max-width: 768px) {
@@ -1473,10 +1473,10 @@ footer{
         grid-template-columns: 1fr;
     }
 
-    .about-highlights {
-        grid-template-columns: 1fr 1fr;
-        gap: 15px;
-    }
+        .about-highlights {
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
 
     .about-text p {
         font-size: 16px;
@@ -1525,10 +1525,10 @@ footer{
         gap: 20px;
     }
 
-    .profile-container {
-        grid-template-columns: 1fr 1fr;
-        gap: 18px;
-    }
+        .profile-container {
+            grid-template-columns: 1fr 1fr;
+            gap: 18px;
+        }
 
     .footer-content {
         grid-template-columns: 1fr;
