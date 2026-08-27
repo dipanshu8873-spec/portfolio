@@ -75,143 +75,118 @@ function typeEffect() {
 
 typeEffect();
 
-/* ================= Certificate Auto-Slider ================= */
+/* ================= Certificate Carousel ================= */
 
-const certificateSlider = document.querySelector(".certificate-slider");
-const sliderContainer = document.querySelector(".certificate-slider-container");
-const prevBtn = document.querySelector(".slider-prev");
-const nextBtn = document.querySelector(".slider-next");
-const dots = document.querySelectorAll(".slider-dots .dot");
-const certificates = document.querySelectorAll(".certificate-card");
+const certCarousel = document.querySelector(".cert-carousel");
+const certSlides = document.querySelectorAll(".cert-slide");
+const certPrevBtn = document.querySelector(".cert-nav-prev");
+const certNextBtn = document.querySelector(".cert-nav-next");
+const certDots = document.querySelectorAll(".cert-dot");
+const certProgressFill = document.querySelector(".cert-progress-fill");
+const certMainContainer = document.querySelector(".cert-main-container");
 
-let currentSlide = 0;
-let slidesPerView = 4;
-let autoSlideTimer = null;
-let isHovering = false;
+let currentCertIndex = 0;
+let certAutoSlideTimer = null;
+let isCertHovering = false;
 
-// Determine slides per view based on screen width
-function updateSlidesPerView() {
-    if (window.innerWidth <= 480) {
-        slidesPerView = 1;
-    } else if (window.innerWidth <= 768) {
-        slidesPerView = 2;
-    } else if (window.innerWidth <= 1200) {
-        slidesPerView = 3;
-    } else {
-        slidesPerView = 4;
-    }
-}
+const totalCertificates = certSlides.length;
 
-// Calculate max slides
-function getMaxSlides() {
-    return Math.max(0, certificates.length - slidesPerView);
-}
+// Show certificate slide
+function showCertSlide(index) {
+    // Update slides
+    certSlides.forEach((slide, i) => {
+        slide.classList.remove("active");
+        if (i === index) {
+            slide.classList.add("active");
+        }
+    });
 
-// Update dot indicators
-function updateDots() {
-    dots.forEach((dot, index) => {
+    // Update dots
+    certDots.forEach((dot, i) => {
         dot.classList.remove("active");
-        if (index === currentSlide) {
+        if (i === index) {
             dot.classList.add("active");
         }
     });
+
+    // Update progress bar
+    const progress = ((index + 1) / totalCertificates) * 100;
+    certProgressFill.style.width = progress + "%";
 }
 
-// Slide to specific position
-function slideTo(index) {
-    const maxSlides = getMaxSlides();
-    currentSlide = Math.max(0, Math.min(index, maxSlides));
-    
-    const slideWidth = certificateSlider.querySelector(".certificate-card").offsetWidth;
-    const gap = 25;
-    const offset = -(currentSlide * (slideWidth + gap));
-    
-    certificateSlider.style.transform = `translateX(${offset}px)`;
-    updateDots();
+// Next certificate
+function nextCert() {
+    currentCertIndex = (currentCertIndex + 1) % totalCertificates;
+    showCertSlide(currentCertIndex);
 }
 
-// Next slide
-function nextSlide() {
-    const maxSlides = getMaxSlides();
-    if (currentSlide < maxSlides) {
-        slideTo(currentSlide + 1);
-    } else {
-        slideTo(0);
-    }
+// Previous certificate
+function prevCert() {
+    currentCertIndex = (currentCertIndex - 1 + totalCertificates) % totalCertificates;
+    showCertSlide(currentCertIndex);
 }
 
-// Previous slide
-function prevSlide() {
-    if (currentSlide > 0) {
-        slideTo(currentSlide - 1);
-    } else {
-        slideTo(getMaxSlides());
-    }
-}
-
-// Auto slide function
-function autoSlide() {
-    if (!isHovering) {
-        nextSlide();
+// Auto slide certificates
+function autoCertSlide() {
+    if (!isCertHovering) {
+        nextCert();
     }
 }
 
 // Start auto sliding
-function startAutoSlide() {
-    autoSlideTimer = setInterval(autoSlide, 3500);
+function startCertAutoSlide() {
+    if (!certAutoSlideTimer) {
+        certAutoSlideTimer = setInterval(autoCertSlide, 3500);
+    }
 }
 
 // Stop auto sliding
-function stopAutoSlide() {
-    if (autoSlideTimer) {
-        clearInterval(autoSlideTimer);
-        autoSlideTimer = null;
+function stopCertAutoSlide() {
+    if (certAutoSlideTimer) {
+        clearInterval(certAutoSlideTimer);
+        certAutoSlideTimer = null;
     }
 }
 
 // Event listeners
-if (prevBtn && nextBtn && certificateSlider) {
-    prevBtn.addEventListener("click", () => {
-        stopAutoSlide();
-        prevSlide();
-        startAutoSlide();
+if (certPrevBtn && certNextBtn && certCarousel) {
+    // Navigation buttons
+    certPrevBtn.addEventListener("click", () => {
+        stopCertAutoSlide();
+        prevCert();
+        startCertAutoSlide();
     });
 
-    nextBtn.addEventListener("click", () => {
-        stopAutoSlide();
-        nextSlide();
-        startAutoSlide();
+    certNextBtn.addEventListener("click", () => {
+        stopCertAutoSlide();
+        nextCert();
+        startCertAutoSlide();
     });
 
     // Pause on hover
-    sliderContainer.addEventListener("mouseenter", () => {
-        isHovering = true;
-        stopAutoSlide();
+    certMainContainer.addEventListener("mouseenter", () => {
+        isCertHovering = true;
+        stopCertAutoSlide();
     });
 
-    sliderContainer.addEventListener("mouseleave", () => {
-        isHovering = false;
-        startAutoSlide();
+    certMainContainer.addEventListener("mouseleave", () => {
+        isCertHovering = false;
+        startCertAutoSlide();
     });
 
     // Dot click
-    dots.forEach((dot, index) => {
+    certDots.forEach((dot, index) => {
         dot.addEventListener("click", () => {
-            stopAutoSlide();
-            slideTo(index);
-            startAutoSlide();
+            stopCertAutoSlide();
+            currentCertIndex = index;
+            showCertSlide(currentCertIndex);
+            startCertAutoSlide();
         });
     });
 
-    // Handle window resize
-    window.addEventListener("resize", () => {
-        updateSlidesPerView();
-        slideTo(Math.min(currentSlide, getMaxSlides()));
-    });
-
     // Initialize
-    updateSlidesPerView();
-    startAutoSlide();
+    showCertSlide(0);
+    startCertAutoSlide();
 }
 
 /* ================= Scroll Reveal ================= */

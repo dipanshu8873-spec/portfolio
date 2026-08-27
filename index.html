@@ -316,95 +316,162 @@
 
 <section id="certificates" class="certificates">
 
-    <h2 class="section-title">My <span>Certificates</span></h2>
+    <!-- Section Heading -->
+    <div class="cert-section-header">
+        <h2 class="cert-heading-main">My Achievements</h2>
+        <div class="cert-heading-divider">
+            <span></span>
+            <i class="fa-solid fa-shield-halved"></i>
+            <span></span>
+        </div>
+        <h3 class="cert-heading-sub">Certificates</h3>
+    </div>
 
-    <div class="certificate-wrapper">
-        <button class="slider-btn slider-prev" aria-label="Previous certificates">
+    <!-- Main Certificate Carousel -->
+    <div class="cert-carousel-wrapper">
+        
+        <!-- Left Navigation Arrow -->
+        <button class="cert-nav-btn cert-nav-prev" aria-label="Previous certificate">
             <i class="fas fa-chevron-left"></i>
         </button>
 
-        <div class="certificate-slider-container">
-            <div class="certificate-slider">
+        <!-- Main Container -->
+        <div class="cert-main-container">
+            <div class="cert-carousel">
+                
                 <!-- Certificate 1 -->
-                <div class="certificate-card">
-                    <div class="cert-icon">🏆</div>
-                    <h3>Cyber Security and Applied Ethical Hacking</h3>
-                    <p class="cert-org">Infosys Springboard</p>
-                    <p class="cert-desc">Advanced cybersecurity techniques and ethical hacking methodologies</p>
-                    <div class="cert-tags">
-                        <span>Cybersecurity</span>
-                        <span>Ethical Hacking</span>
+                <div class="cert-slide" data-cert-index="0">
+                    <div class="cert-preview">
+                        <object data="assets/certificates/ethical-hacking.pdf" type="application/pdf">
+                            <div class="cert-placeholder">
+                                <i class="fa-solid fa-file-pdf"></i>
+                                <p>PDF Preview</p>
+                            </div>
+                        </object>
                     </div>
-                    <a href="assets/certificates/ethical-hacking.pdf"
-                       target="_blank"
-                       class="btn">
-                        View Certificate
-                    </a>
+                    <div class="cert-details">
+                        <div class="cert-org-badge">
+                            <i class="fa-solid fa-building"></i>
+                            <span>Infosys Springboard</span>
+                        </div>
+                        <h4 class="cert-title">Cyber Security and Applied Ethical Hacking</h4>
+                        <p class="cert-meta">Certification in advanced cybersecurity techniques and ethical hacking methodologies</p>
+                        <div class="cert-skills">
+                            <span class="skill-tag">Cybersecurity</span>
+                            <span class="skill-tag">Ethical Hacking</span>
+                            <span class="skill-tag">Security Tools</span>
+                        </div>
+                        <a href="assets/certificates/ethical-hacking.pdf" target="_blank" class="cert-view-btn">
+                            View Certificate
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Certificate 2 -->
-                <div class="certificate-card">
-                    <div class="cert-icon">🔐</div>
-                    <h3>Information Security A-Z Bootcamp</h3>
-                    <p class="cert-org">Udemy</p>
-                    <p class="cert-desc">Comprehensive information security bootcamp covering core security concepts</p>
-                    <div class="cert-tags">
-                        <span>Security</span>
-                        <span>Bootcamp</span>
+                <div class="cert-slide" data-cert-index="1">
+                    <div class="cert-preview">
+                        <object data="assets/certificates/cyber-bootcamp.pdf" type="application/pdf">
+                            <div class="cert-placeholder">
+                                <i class="fa-solid fa-file-pdf"></i>
+                                <p>PDF Preview</p>
+                            </div>
+                        </object>
                     </div>
-                    <a href="assets/certificates/cyber-bootcamp.pdf"
-                       target="_blank"
-                       class="btn">
-                        View Certificate
-                    </a>
+                    <div class="cert-details">
+                        <div class="cert-org-badge">
+                            <i class="fa-solid fa-building"></i>
+                            <span>Udemy</span>
+                        </div>
+                        <h4 class="cert-title">Information Security A-Z Bootcamp</h4>
+                        <p class="cert-meta">Comprehensive information security bootcamp covering core security concepts and best practices</p>
+                        <div class="cert-skills">
+                            <span class="skill-tag">Security</span>
+                            <span class="skill-tag">Bootcamp</span>
+                            <span class="skill-tag">Information Security</span>
+                        </div>
+                        <a href="assets/certificates/cyber-bootcamp.pdf" target="_blank" class="cert-view-btn">
+                            View Certificate
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Certificate 3 -->
-                <div class="certificate-card">
-                    <div class="cert-icon">🛡️</div>
-                    <h3>Introduction To Cyber Security</h3>
-                    <p class="cert-org">Infosys Springboard</p>
-                    <p class="cert-desc">Foundational concepts and best practices in cybersecurity</p>
-                    <div class="cert-tags">
-                        <span>Cybersecurity</span>
-                        <span>Foundation</span>
+                <div class="cert-slide" data-cert-index="2">
+                    <div class="cert-preview">
+                        <object data="assets/certificates/Introduction To Cyber Security.pdf" type="application/pdf">
+                            <div class="cert-placeholder">
+                                <i class="fa-solid fa-file-pdf"></i>
+                                <p>PDF Preview</p>
+                            </div>
+                        </object>
                     </div>
-                    <a href="assets/certificates/Introduction To Cyber Security.pdf"
-                       target="_blank"
-                       class="btn">
-                        View Certificate
-                    </a>
+                    <div class="cert-details">
+                        <div class="cert-org-badge">
+                            <i class="fa-solid fa-building"></i>
+                            <span>Infosys Springboard</span>
+                        </div>
+                        <h4 class="cert-title">Introduction To Cyber Security</h4>
+                        <p class="cert-meta">Foundational concepts and best practices in cybersecurity for modern digital landscapes</p>
+                        <div class="cert-skills">
+                            <span class="skill-tag">Cybersecurity</span>
+                            <span class="skill-tag">Foundation</span>
+                            <span class="skill-tag">Best Practices</span>
+                        </div>
+                        <a href="assets/certificates/Introduction To Cyber Security.pdf" target="_blank" class="cert-view-btn">
+                            View Certificate
+                        </a>
+                    </div>
                 </div>
 
                 <!-- Certificate 4 -->
-                <div class="certificate-card">
-                    <div class="cert-icon">💬</div>
-                    <h3>Communication & Public Speaking Skills</h3>
-                    <p class="cert-org">Lovely Professional University</p>
-                    <p class="cert-desc">Enhanced communication and public speaking proficiency</p>
-                    <div class="cert-tags">
-                        <span>Communication</span>
-                        <span>Speaking</span>
+                <div class="cert-slide" data-cert-index="3">
+                    <div class="cert-preview">
+                        <object data="assets/certificates/communication.pdf" type="application/pdf">
+                            <div class="cert-placeholder">
+                                <i class="fa-solid fa-file-pdf"></i>
+                                <p>PDF Preview</p>
+                            </div>
+                        </object>
                     </div>
-                    <a href="assets/certificates/communication.pdf"
-                       target="_blank"
-                       class="btn">
-                        View Certificate
-                    </a>
+                    <div class="cert-details">
+                        <div class="cert-org-badge">
+                            <i class="fa-solid fa-building"></i>
+                            <span>Lovely Professional University</span>
+                        </div>
+                        <h4 class="cert-title">Communication & Public Speaking Skills</h4>
+                        <p class="cert-meta">Enhanced communication and professional public speaking proficiency for technical presentations</p>
+                        <div class="cert-skills">
+                            <span class="skill-tag">Communication</span>
+                            <span class="skill-tag">Speaking</span>
+                            <span class="skill-tag">Presentation</span>
+                        </div>
+                        <a href="assets/certificates/communication.pdf" target="_blank" class="cert-view-btn">
+                            View Certificate
+                        </a>
+                    </div>
                 </div>
+
             </div>
         </div>
 
-        <button class="slider-btn slider-next" aria-label="Next certificates">
+        <!-- Right Navigation Arrow -->
+        <button class="cert-nav-btn cert-nav-next" aria-label="Next certificate">
             <i class="fas fa-chevron-right"></i>
         </button>
+
     </div>
 
-    <div class="slider-dots">
-        <span class="dot active" data-index="0"></span>
-        <span class="dot" data-index="1"></span>
-        <span class="dot" data-index="2"></span>
-        <span class="dot" data-index="3"></span>
+    <!-- Bottom Navigation: Dots and Progress -->
+    <div class="cert-nav-bottom">
+        <div class="cert-dots">
+            <span class="cert-dot active" data-index="0"></span>
+            <span class="cert-dot" data-index="1"></span>
+            <span class="cert-dot" data-index="2"></span>
+            <span class="cert-dot" data-index="3"></span>
+        </div>
+        <div class="cert-progress-bar">
+            <div class="cert-progress-fill"></div>
+        </div>
     </div>
 
 </section>
