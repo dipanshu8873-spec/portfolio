@@ -87,7 +87,6 @@ const certMainContainer = document.querySelector(".cert-main-container");
 
 let currentCertIndex = 0;
 let certAutoSlideTimer = null;
-let isCertHovering = false;
 
 const totalCertificates = certSlides.length;
 
@@ -115,7 +114,7 @@ function showCertSlide(index) {
 }
 
 // Next certificate
-function nextCert() {
+function nextCertificate() {
     currentCertIndex = (currentCertIndex + 1) % totalCertificates;
     showCertSlide(currentCertIndex);
 }
@@ -126,17 +125,10 @@ function prevCert() {
     showCertSlide(currentCertIndex);
 }
 
-// Auto slide certificates
-function autoCertSlide() {
-    if (!isCertHovering) {
-        nextCert();
-    }
-}
-
 // Start auto sliding
 function startCertAutoSlide() {
     if (!certAutoSlideTimer) {
-        certAutoSlideTimer = setInterval(autoCertSlide, 3500);
+        certAutoSlideTimer = setInterval(nextCertificate, 2000);
     }
 }
 
@@ -159,18 +151,16 @@ if (certPrevBtn && certNextBtn && certCarousel) {
 
     certNextBtn.addEventListener("click", () => {
         stopCertAutoSlide();
-        nextCert();
+        nextCertificate();
         startCertAutoSlide();
     });
 
     // Pause on hover
     certMainContainer.addEventListener("mouseenter", () => {
-        isCertHovering = true;
         stopCertAutoSlide();
     });
 
     certMainContainer.addEventListener("mouseleave", () => {
-        isCertHovering = false;
         startCertAutoSlide();
     });
 
