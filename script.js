@@ -75,6 +75,145 @@ function typeEffect() {
 
 typeEffect();
 
+/* ================= Certificate Auto-Slider ================= */
+
+const certificateSlider = document.querySelector(".certificate-slider");
+const sliderContainer = document.querySelector(".certificate-slider-container");
+const prevBtn = document.querySelector(".slider-prev");
+const nextBtn = document.querySelector(".slider-next");
+const dots = document.querySelectorAll(".slider-dots .dot");
+const certificates = document.querySelectorAll(".certificate-card");
+
+let currentSlide = 0;
+let slidesPerView = 4;
+let autoSlideTimer = null;
+let isHovering = false;
+
+// Determine slides per view based on screen width
+function updateSlidesPerView() {
+    if (window.innerWidth <= 480) {
+        slidesPerView = 1;
+    } else if (window.innerWidth <= 768) {
+        slidesPerView = 2;
+    } else if (window.innerWidth <= 1200) {
+        slidesPerView = 3;
+    } else {
+        slidesPerView = 4;
+    }
+}
+
+// Calculate max slides
+function getMaxSlides() {
+    return Math.max(0, certificates.length - slidesPerView);
+}
+
+// Update dot indicators
+function updateDots() {
+    dots.forEach((dot, index) => {
+        dot.classList.remove("active");
+        if (index === currentSlide) {
+            dot.classList.add("active");
+        }
+    });
+}
+
+// Slide to specific position
+function slideTo(index) {
+    const maxSlides = getMaxSlides();
+    currentSlide = Math.max(0, Math.min(index, maxSlides));
+    
+    const slideWidth = certificateSlider.querySelector(".certificate-card").offsetWidth;
+    const gap = 25;
+    const offset = -(currentSlide * (slideWidth + gap));
+    
+    certificateSlider.style.transform = `translateX(${offset}px)`;
+    updateDots();
+}
+
+// Next slide
+function nextSlide() {
+    const maxSlides = getMaxSlides();
+    if (currentSlide < maxSlides) {
+        slideTo(currentSlide + 1);
+    } else {
+        slideTo(0);
+    }
+}
+
+// Previous slide
+function prevSlide() {
+    if (currentSlide > 0) {
+        slideTo(currentSlide - 1);
+    } else {
+        slideTo(getMaxSlides());
+    }
+}
+
+// Auto slide function
+function autoSlide() {
+    if (!isHovering) {
+        nextSlide();
+    }
+}
+
+// Start auto sliding
+function startAutoSlide() {
+    autoSlideTimer = setInterval(autoSlide, 3500);
+}
+
+// Stop auto sliding
+function stopAutoSlide() {
+    if (autoSlideTimer) {
+        clearInterval(autoSlideTimer);
+        autoSlideTimer = null;
+    }
+}
+
+// Event listeners
+if (prevBtn && nextBtn && certificateSlider) {
+    prevBtn.addEventListener("click", () => {
+        stopAutoSlide();
+        prevSlide();
+        startAutoSlide();
+    });
+
+    nextBtn.addEventListener("click", () => {
+        stopAutoSlide();
+        nextSlide();
+        startAutoSlide();
+    });
+
+    // Pause on hover
+    sliderContainer.addEventListener("mouseenter", () => {
+        isHovering = true;
+        stopAutoSlide();
+    });
+
+    sliderContainer.addEventListener("mouseleave", () => {
+        isHovering = false;
+        startAutoSlide();
+    });
+
+    // Dot click
+    dots.forEach((dot, index) => {
+        dot.addEventListener("click", () => {
+            stopAutoSlide();
+            slideTo(index);
+            startAutoSlide();
+        });
+    });
+
+    // Handle window resize
+    window.addEventListener("resize", () => {
+        updateSlidesPerView();
+        slideTo(Math.min(currentSlide, getMaxSlides()));
+    });
+
+    // Initialize
+    updateSlidesPerView();
+    startAutoSlide();
+}
+
 /* ================= Scroll Reveal ================= */
 
 const observer = new IntersectionObserver((entries)=>{

@@ -75,6 +75,15 @@
 
 <body>
 
+    <!-- ================= INTRO ANIMATION ================= -->
+    <div id="introOverlay" class="intro-overlay">
+        <div class="intro-content">
+            <div class="intro-text intro-hello">Hello</div>
+            <div class="intro-text intro-namaste">Namaste</div>
+            <div class="intro-text intro-welcome">Welcome</div>
+        </div>
+    </div>
+
     <!-- ================= NAVBAR ================= -->
 
     <header>
@@ -116,6 +125,8 @@
     <section id="home" class="hero">
 
         <div class="hero-text">
+
+            <div class="hero-badge">🔒 Cybersecurity Enthusiast</div>
 
             <h4>Hello, I'm</h4>
 
@@ -163,17 +174,46 @@
 
     <div class="container">
 
-        <h2 class="section-title">About Me</h2>
+        <h2 class="section-title">About <span>Me</span></h2>
 
-        <p>
-            I am an MCA student at Lovely Professional University with a strong interest in
-            Cybersecurity, Networking, and Ethical Hacking. I enjoy understanding how
-            systems work, identifying security vulnerabilities, and protecting digital assets
-            from cyber threats.
+        <div class="about-content">
+            <div class="about-text">
+                <p>
+                    I am an MCA student at Lovely Professional University with a strong interest in
+                    Cybersecurity, Networking, and Ethical Hacking. I enjoy understanding how
+                    systems work, identifying security vulnerabilities, and protecting digital assets
+                    from cyber threats.
+                </p>
 
-            I continuously improve my technical skills through hands-on projects,
-            programming, and learning modern cybersecurity tools.
-        </p>
+                <p>
+                    I continuously improve my technical skills through hands-on projects,
+                    programming, and learning modern cybersecurity tools.
+                </p>
+            </div>
+
+            <div class="about-highlights">
+                <div class="highlight-card">
+                    <i class="fa-solid fa-graduation-cap"></i>
+                    <h4>Education</h4>
+                    <p>MCA in Cybersecurity</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fa-solid fa-shield-halved"></i>
+                    <h4>Specialization</h4>
+                    <p>Cyber Security</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fa-solid fa-university"></i>
+                    <h4>University</h4>
+                    <p>Lovely Professional</p>
+                </div>
+                <div class="highlight-card">
+                    <i class="fa-solid fa-code"></i>
+                    <h4>Focus Areas</h4>
+                    <p>Security & Web Dev</p>
+                </div>
+            </div>
+        </div>
 
     </div>
 
@@ -278,56 +318,93 @@
 
     <h2 class="section-title">My <span>Certificates</span></h2>
 
-    <div class="certificate-container">
+    <div class="certificate-wrapper">
+        <button class="slider-btn slider-prev" aria-label="Previous certificates">
+            <i class="fas fa-chevron-left"></i>
+        </button>
 
-        <!-- Certificate 1 -->
-        <div class="certificate-card">
-            <h3>Cyber Security and Applied Ethical Hacking</h3>
-            <p>Infosys Springboard</p>
+        <div class="certificate-slider-container">
+            <div class="certificate-slider">
+                <!-- Certificate 1 -->
+                <div class="certificate-card">
+                    <div class="cert-icon">🏆</div>
+                    <h3>Cyber Security and Applied Ethical Hacking</h3>
+                    <p class="cert-org">Infosys Springboard</p>
+                    <p class="cert-desc">Advanced cybersecurity techniques and ethical hacking methodologies</p>
+                    <div class="cert-tags">
+                        <span>Cybersecurity</span>
+                        <span>Ethical Hacking</span>
+                    </div>
+                    <a href="assets/certificates/ethical-hacking.pdf"
+                       target="_blank"
+                       class="btn">
+                        View Certificate
+                    </a>
+                </div>
 
-            <a href="assets/certificates/ethical-hacking.pdf"
-               target="_blank"
-               class="btn">
-                View Certificate
-            </a>
+                <!-- Certificate 2 -->
+                <div class="certificate-card">
+                    <div class="cert-icon">🔐</div>
+                    <h3>Information Security A-Z Bootcamp</h3>
+                    <p class="cert-org">Udemy</p>
+                    <p class="cert-desc">Comprehensive information security bootcamp covering core security concepts</p>
+                    <div class="cert-tags">
+                        <span>Security</span>
+                        <span>Bootcamp</span>
+                    </div>
+                    <a href="assets/certificates/cyber-bootcamp.pdf"
+                       target="_blank"
+                       class="btn">
+                        View Certificate
+                    </a>
+                </div>
+
+                <!-- Certificate 3 -->
+                <div class="certificate-card">
+                    <div class="cert-icon">🛡️</div>
+                    <h3>Introduction To Cyber Security</h3>
+                    <p class="cert-org">Infosys Springboard</p>
+                    <p class="cert-desc">Foundational concepts and best practices in cybersecurity</p>
+                    <div class="cert-tags">
+                        <span>Cybersecurity</span>
+                        <span>Foundation</span>
+                    </div>
+                    <a href="assets/certificates/Introduction To Cyber Security.pdf"
+                       target="_blank"
+                       class="btn">
+                        View Certificate
+                    </a>
+                </div>
+
+                <!-- Certificate 4 -->
+                <div class="certificate-card">
+                    <div class="cert-icon">💬</div>
+                    <h3>Communication & Public Speaking Skills</h3>
+                    <p class="cert-org">Lovely Professional University</p>
+                    <p class="cert-desc">Enhanced communication and public speaking proficiency</p>
+                    <div class="cert-tags">
+                        <span>Communication</span>
+                        <span>Speaking</span>
+                    </div>
+                    <a href="assets/certificates/communication.pdf"
+                       target="_blank"
+                       class="btn">
+                        View Certificate
+                    </a>
+                </div>
+            </div>
         </div>
 
-        <!-- Certificate 2 -->
-        <div class="certificate-card">
-            <h3>Information Security A-Z Bootcamp</h3>
-            <p>Udemy</p>
+        <button class="slider-btn slider-next" aria-label="Next certificates">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+    </div>
 
-            <a href="assets/certificates/cyber-bootcamp.pdf"
-               target="_blank"
-               class="btn">
-                View Certificate
-            </a>
-        </div>
-
-        <!-- Certificate 3 -->
-        <div class="certificate-card">
-            <h3>Introduction To Cyber Security</h3>
-            <p>Infosys Springboard</p>
-
-            <a href="assets/certificates/Introduction To Cyber Security.pdf"
-               target="_blank"
-               class="btn">
-                View Certificate
-            </a>
-        </div>
-
-        <!-- Certificate 4 -->
-        <div class="certificate-card">
-            <h3>Communication & Public Speaking Skills</h3>
-            <p>Lovely Professional University</p>
-
-            <a href="assets/certificates/communication.pdf"
-               target="_blank"
-               class="btn">
-                View Certificate
-            </a>
-        </div>
-
+    <div class="slider-dots">
+        <span class="dot active" data-index="0"></span>
+        <span class="dot" data-index="1"></span>
+        <span class="dot" data-index="2"></span>
+        <span class="dot" data-index="3"></span>
     </div>
 
 </section>
@@ -662,10 +739,41 @@
 <!-- ================= FOOTER ================= -->
 
 <footer>
+    <div class="footer-content">
+        <div class="footer-section">
+            <h4>Dipanshu Kumar</h4>
+            <p>Cybersecurity Portfolio | MCA Student</p>
+        </div>
 
-    <p>
-        © 2026 Dipanshu Kumar | All Rights Reserved.
-    </p>
+        <div class="footer-section footer-links">
+            <h4>Quick Links</h4>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="footer-section footer-social">
+            <h4>Connect With Me</h4>
+            <div class="social-links">
+                <a href="https://github.com/dipanshu8873-spec" target="_blank" title="GitHub">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://www.linkedin.com/in/dipanshu-kumar14/" target="_blank" title="LinkedIn">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="mailto:dipanshukumar5109018@gmail.com" title="Email">
+                    <i class="fas fa-envelope"></i>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        <p>&copy; 2026 Dipanshu Kumar | Cybersecurity Portfolio | All Rights Reserved.</p>
+    </div>
 
 </footer>
 
