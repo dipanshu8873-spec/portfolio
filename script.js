@@ -13,36 +13,6 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-const cursorFollower = document.querySelector(".cursor-follower");
-
-if (cursorFollower && window.matchMedia("(hover: hover) and (pointer: fine)").matches) {
-    let targetX = 0;
-    let targetY = 0;
-    let cursorX = 0;
-    let cursorY = 0;
-
-    document.addEventListener("mousemove", (event) => {
-        targetX = event.clientX;
-        targetY = event.clientY;
-        document.body.classList.add("cursor-active");
-    });
-
-    document.querySelectorAll("a, button, .theme-btn").forEach((element) => {
-        element.addEventListener("mouseenter", () => document.body.classList.add("cursor-hover"));
-        element.addEventListener("mouseleave", () => document.body.classList.remove("cursor-hover"));
-    });
-
-    const moveCursor = () => {
-        cursorX += (targetX - cursorX) * 0.16;
-        cursorY += (targetY - cursorY) * 0.16;
-        cursorFollower.style.left = `${cursorX}px`;
-        cursorFollower.style.top = `${cursorY}px`;
-        requestAnimationFrame(moveCursor);
-    };
-
-    moveCursor();
-}
-
 // =============================
 // Dark / Light Mode
 // =============================

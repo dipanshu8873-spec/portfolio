@@ -49,41 +49,6 @@ body{
     text-shadow: 0 0 30px rgba(59, 130, 246, .6), 0 0 60px rgba(34, 211, 238, .3);
 }
 
-body.cursor-active .cursor-follower{
-    opacity:1;
-}
-
-body.cursor-hover .cursor-follower{
-    border-color:#3b82f6;
-    transform:translate(-50%,-50%) scale(1.2);
-}
-
-.cursor-follower{
-    position:fixed;
-    top:0;
-    left:0;
-    width:34px;
-    height:34px;
-    border:1px solid rgba(148,163,184,.75);
-    border-radius:50%;
-    pointer-events:none;
-    opacity:0;
-    transform:translate(-50%,-50%);
-    transition:opacity .2s ease,border-color .2s ease,transform .12s ease-out;
-    z-index:11000;
-}
-
-.cursor-follower span{
-    position: absolute;
-    width:5px;
-    height:5px;
-    left: 50%;
-    top: 50%;
-    border-radius:50%;
-    background:#3b82f6;
-    transform: translate(-50%, -50%);
-}
-
 .intro-namaste {
     animation: introFadeInOut 1.2s ease-in-out 1.2s 1 forwards;
 }
@@ -565,6 +530,33 @@ transform:translateY(0);
     color:#94a3b8;
     font-size:14px;
     margin-top:3px;
+}
+
+.about,
+.skills,
+.education,
+.profiles,
+.contact{
+    position:relative;
+    overflow:hidden;
+    border:1px solid rgba(59,130,246,.18);
+    background-color:#07142d;
+    background-image:
+        linear-gradient(rgba(56,189,248,.07) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(56,189,248,.07) 1px, transparent 1px),
+        radial-gradient(circle at 18% 15%, rgba(14,165,233,.14), transparent 28%),
+        radial-gradient(circle at 84% 82%, rgba(59,130,246,.12), transparent 30%);
+    background-size:46px 46px,46px 46px,auto,auto;
+    box-shadow:0 0 40px rgba(14,165,233,.08),inset 0 0 28px rgba(59,130,246,.05);
+}
+
+.about > *,
+.skills > *,
+.education > *,
+.profiles > *,
+.contact > *{
+    position:relative;
+    z-index:1;
 }
 
 /* =========================
@@ -2212,18 +2204,4 @@ body.light-mode .btn2 {
 
 body.light-mode .btn2:hover {
     color: #ffffff;
-}
-
-@media (hover:hover) and (pointer:fine){
-    body,
-    a,
-    button{
-        cursor:none;
-    }
-}
-
-@media (hover:none), (pointer:coarse){
-    .cursor-follower{
-        display:none;
-    }
 }
