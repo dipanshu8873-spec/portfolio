@@ -700,10 +700,10 @@ transform:translateY(0);
     flex: 1;
     background: rgba(15, 23, 42, 0.55);
     border-radius: 20px;
-    padding: 45px;
+    padding: 32px;
     box-shadow: 0 0 35px rgba(59, 130, 246, 0.15), inset 0 0 20px rgba(59, 130, 246, 0.06);
     border: 1px solid rgba(59, 130, 246, 0.3);
-    min-height: 760px;
+    min-height: 520px;
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
 }
@@ -740,19 +740,21 @@ transform:translateY(0);
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 640px;
-    background: rgba(10, 15, 30, 0.7);
+    height: auto;
+    aspect-ratio: 2339 / 1653;
+    background: transparent;
     border-radius: 16px;
     border: 1px solid rgba(59, 130, 246, 0.25);
     padding: 8px;
-    box-shadow: 0 0 30px rgba(59, 130, 246, 0.15), inset 0 0 14px rgba(59, 130, 246, 0.08);
+    box-shadow: none;
     overflow: hidden;
 }
 
 .cert-preview img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
+    height: auto;
+    max-height: 100%;
+    object-fit: contain;
     border-radius: 8px;
     filter: drop-shadow(0 0 8px rgba(0, 0, 0, 0.4));
 }
@@ -956,8 +958,8 @@ transform:translateY(0);
 
 @media(max-width: 1200px) {
     .cert-main-container {
-        padding: 40px;
-        min-height: 760px;
+        padding: 32px;
+        min-height: 520px;
     }
 
     .cert-slide {
@@ -966,7 +968,7 @@ transform:translateY(0);
     }
 
     .cert-preview {
-        height: 640px;
+        height: auto;
     }
 
     .cert-title {
@@ -1006,7 +1008,7 @@ transform:translateY(0);
     }
 
     .cert-preview {
-        height: 640px;
+        height: auto;
     }
 }
 
@@ -1027,7 +1029,7 @@ transform:translateY(0);
     }
 
     .cert-preview {
-        height: 300px;
+        height: auto;
         order: -1;
     }
 
@@ -1103,7 +1105,7 @@ transform:translateY(0);
     }
 
     .cert-preview {
-        height: 250px;
+        height: auto;
     }
 
     .cert-org-badge {
