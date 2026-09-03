@@ -18,6 +18,15 @@ body{
     overflow-x:hidden;
 }
 
+body.cursor-active .cursor-follower{
+    opacity:1;
+}
+
+body.cursor-hover .cursor-follower{
+    border-color:#3b82f6;
+    transform:translate(-50%,-50%) scale(1.2);
+}
+
 .cursor-follower{
     position:fixed;
     top:0;
@@ -34,15 +43,14 @@ body{
 }
 
 .cursor-follower span{
-    color: #fff;
-    text-shadow: 0 0 30px rgba(59, 130, 246, 0.6), 0 0 60px rgba(34, 211, 238, 0.3);
     position: absolute;
-    opacity: 0;
+    width:5px;
+    height:5px;
     left: 50%;
     top: 50%;
+    border-radius:50%;
+    background:#3b82f6;
     transform: translate(-50%, -50%);
-    white-space: nowrap;
-    letter-spacing: 2px;
 }
 
 .intro-namaste {
@@ -676,6 +684,8 @@ transform:translateY(0);
 
 .cert-main-container {
     flex: 1;
+    display: flex;
+    align-items: center;
     background: rgba(15, 23, 42, 0.55);
     border-radius: 20px;
     padding: 32px;
@@ -689,6 +699,7 @@ transform:translateY(0);
 .cert-carousel {
     display: flex;
     position: relative;
+    width: 100%;
 }
 
 .cert-slide {
