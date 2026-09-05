@@ -39,7 +39,6 @@ const words = [
   "MCA Student",
   "Cybersecurity Enthusiast",
   "Ethical Hacking Learner",
-  "Web Developer",
   "Python Programmer"
 ];
 
