@@ -2035,15 +2035,83 @@ body.light-mode .contact-info p {
 }
 
 body.light-mode .about,
-body.light-mode .skill-card,
-body.light-mode .edu-box,
-body.light-mode .certificate-card,
-body.light-mode .profile-card,
+body.light-mode .skills,
+body.light-mode .education,
+body.light-mode .certificates,
+body.light-mode .projects,
+body.light-mode .profiles,
+body.light-mode .contact,
 body.light-mode .contact-info,
-body.light-mode .contact-form {
-    background: #ffffff;
+body.light-mode .contact-form,
+body.light-mode .skill-panel,
+body.light-mode .edu-box,
+body.light-mode .profile-card,
+body.light-mode .highlight-card,
+body.light-mode .project-card {
+    background: rgba(255, 255, 255, 0.9);
     border-color: #cbd5e1;
     box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+body.light-mode .hero-badge {
+    background: rgba(255, 255, 255, 0.8);
+    border-color: rgba(59, 130, 246, 0.2);
+    color: #334155;
+}
+
+body.light-mode .hero-text h2,
+body.light-mode .hero-text p,
+body.light-mode .about p,
+body.light-mode .edu-box p,
+body.light-mode .certificate-card p,
+body.light-mode .project-card p,
+body.light-mode .profile-card p,
+body.light-mode .contact-info p,
+body.light-mode .section-title,
+body.light-mode .about-text p,
+body.light-mode .highlight-card p,
+body.light-mode .skill-item span,
+body.light-mode .tech-stack span,
+body.light-mode .footer-section p,
+body.light-mode .footer-links a,
+body.light-mode .footer-bottom {
+    color: #475569;
+}
+
+body.light-mode .highlight-card h4,
+body.light-mode .skill-panel h3,
+body.light-mode .profile-card h3,
+body.light-mode .footer-section h4,
+body.light-mode .cert-title,
+body.light-mode .edu-box h3,
+body.light-mode .project-card h3,
+body.light-mode .logo,
+body.light-mode .nav-links a,
+body.light-mode .skill-item strong {
+    color: #0f172a;
+}
+
+body.light-mode .skill-item {
+    background: #f8fafc;
+    border-color: #dbeafe;
+}
+
+body.light-mode .skill-item strong {
+    color: #0f172a;
+}
+
+body.light-mode .about,
+body.light-mode .skills,
+body.light-mode .education,
+body.light-mode .projects,
+body.light-mode .contact,
+body.light-mode .profiles {
+    background-image:
+        linear-gradient(rgba(14,165,233,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(14,165,233,0.05) 1px, transparent 1px),
+        radial-gradient(circle at 18% 15%, rgba(14,165,233,0.08), transparent 28%),
+        radial-gradient(circle at 84% 82%, rgba(59,130,246,0.08), transparent 30%);
+    border-color: rgba(59, 130, 246, 0.18);
 }
 
 /* Light Mode - Certificate Carousel */
